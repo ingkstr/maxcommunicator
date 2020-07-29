@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Teléfonos - Max Communicator</title>
+    <link rel="icon" href="img/logo.png">
+  </head>
+  <body>
+
+    <div class="container">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a href="index.html">
+          <img src="img/logo.png" width="120" height="50"/>
+        </a>
+        <span class="navbar-brand mb-0 h1">Portal de ayuda de solución MaxCommunicator</span>
+      </nav>
+
+      <div class="container mt-5 mb-2">
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="card">
+              <img src="img/phones/phone.png" class="card-img-top" alt="Phones" height="200">
+              <div class="card-body">
+                <h5 class="card-title">Uso de teléfonos VoIP</h5>
+                <p class="card-text">Los teléfonos IP pueden convivir con esta solución y pueden ser configurados por ti mismo. Revisa esta sección para más detalles</p>
+                <div class="alert alert-warning mt-3 mb-3" role="alert">
+                    Siempre revisa que los teléfonos que quieras operar estén
+                  en este listado. También deben estar configurados sobre Internet, ya que de lo contrario, la configuración deberá ser manual y requerirás levantar un folio para enviar personal a sitio.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm">
+             <div class="accordion" id="listado">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-light btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Asigna un teléfono a una cuenta
+                    </button>
+                  </h2>
+                </div>
+
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#listado">
+                  <div class="card-body">
+                    <p>En el <a href="https://cloudpbx.maxcom.com/bg" target="_blank">portal de administrador</a>, se debe ir a la sección de <strong>Teléfonos</strong>.</p>
+
+                    <img src="img/phones/did/ima1.png" alt="Seccion Telefonos" width="300" height="150">
+
+                    <p>Debes buscar la MAC del equipo a asociar (si no aparece, acercate a tu ejecutivo postventa para requerir habilitar esa MAC).</p>
+
+                    <img src="img/phones/did/ima2.png" alt="Selección MAC" width="300" height="150">
+
+                    <p>En la pantalla que aparece debe hacer lo siguiente.</p>
+
+                    <ol>
+                      <li>Seleccionar la casilla “¿Está asignado a la línea?”</li>
+                      <li>El cuadro que viene al frente debe capturar el DID a asignarle</li>
+                      <li>En el cuadro de “Autenticar hasta” debe poner la fecha y hora máxima en que se permitirá el autoaprovisionamiento. No se recomienda dejar pasar más de un día. De hecho, se recomienda dar click en “Permitir la autenticación durante una hora a partir de este momento” para que se rellene automáticamente la fecha y hora con los datos de una hora en el futuro.</li>
+                      <li>Se da click en “Aplicar”</li>
+                    </ol>
+
+                    <img src="img/phones/did/ima3.png" alt="Selección DID" width="400" height="250">
+
+                    </div>
+                  </div>
+
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h2 class="mb-0">
+                    <button class="btn btn-light btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Autoconfiguración del teléfono
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#listado">
+                  <div class="card-body">
+
+                    <p>Durante el tiempo permitido en la asignación de cuenta, se debe perdir la carga de la configuración. Para ello, se recomienda siempre reiniciar el teléfono de fábrica.</p>
+
+                     <p>Hay dos formas para aprovisionar un teléfono IP después de haber asignado la cuenta</p>
+
+                    <ol>
+                      <li>Ingresando a la GUI del teléfono y capturar en la sección de autoaprovisionamiento la URL https://cloudpbx.maxcom.com/sip-ps o http://cloudpbx.maxcom.com. Después de eso, el teléfono se debe reiniciar.</li>
+                      <img src="img/phones/sipps/ima1.png" alt="GUI Phone" width="400" height="180">
+                      <li>Conectando tu teléfono a una red con DHCP, la cual debe tener la opción 66 configurada con el ascii https://cloudpbx.maxcom.com/sip-ps o http://cloudpbx.maxcom.com/sip-ps. Esto permitirá que el teléfono tone configuración desde que se conecta a la red.</li>
+                      <img src="img/phones/sipps/ima2.png" alt="DHCP 66" width="500" height="100">
+                    </ol>
+
+                    <p>El teléfono se reiniciará dos veces y finalmente estará listo para su operación.</p>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button class="btn btn-light btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Consideración especial si se usa IP fija
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#listado">
+                  <div class="card-body">
+                     <p>Se deben tener en cuenta 2 pasos antes de asociar la MAC con el teléfono físico.</p>
+
+                    <ol>
+                      <li>Se debe cargar la IP fija manual al teléfono para que tenga conectividad.</li>
+                      <li>En el <a href="https://cloudpbx.maxcom.com/bg" target="_blank">portal de administrador</a> se debe ir a la sección de "Teléfonos". Después buscar el teléfono deseado y seleccionar la opción de "Configurar teléfono". Esto abrirá una nueva ventana, a la que debe dar click en "Crear nuevo perfil". Después se debe elegir el modelo exacto del teléfono deseado. Después de ello, se selecciona el equipo telefónico y en la sección de "IP Settings" se carga la IP que debe llevar.</li>
+                      <p><img src="img/phones/ipfija/ima1.png" alt="Paso 1 IP fija" width="500" height="100"></p>
+                      <p><img src="img/phones/ipfija/ima2.png" alt="Paso 2 IP fija" width="400" height="180"></p>
+                      <p><img src="img/phones/ipfija/ima3.png" alt="Paso 3 IP fija" width="400" height="180"></p>
+                      <p><img src="img/phones/ipfija/ima4.png" alt="Paso 4 IP fija" width="200" height="200"></p>
+                      <p><img src="img/phones/ipfija/ima5.png" alt="Paso 5 IP fija" width="500" height="300"></p>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+
+                <div class="card">
+                <div class="card-header" id="headingFour">
+                  <h2 class="mb-0">
+                    <button class="btn btn-light btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                      Teléfonos homologados
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#listado">
+                  <div class="card-body">
+                     <p>Pregunta a tu ejecutivo postventa si es posible usar otro modelo de los que vienen enlistados. De no ser posible y es mandatorio utilizarlo, toma en cuenta que el funcionamiento puede ser errático.</p>
+
+                   <div class="card-columns">
+
+                    <div class="card">
+                        <img class="card-img-top w-100 mx-auto" src="img/phones/homologados/t19.jpg" alt="T19" />
+                        <div class="card-body">
+                          <h5 class="card-title">Yealink T19</h5>
+                          <p class="card-text"><small class="text-muted">Firmware T19P-31.71.202.51 y T19P_E2-53.80.202.1</small></p>
+                        </div>
+                      </div>
+
+                     <div class="card">
+                        <img class="card-img-top w-100 mx-auto" src="img/phones/homologados/t23.jpg" alt="T23" />
+                        <div class="card-body">
+                          <h5 class="card-title">Yealink T23</h5>
+                          <p class="card-text"><small class="text-muted">Firmware T23P-44.80.202.1</small></p>
+                        </div>
+                      </div>
+
+                     <div class="card">
+                        <img class="card-img-top w-100 mx-auto" src="img/phones/homologados/GXP1615.jpg" alt="GXP1615" />
+                        <div class="card-body">
+                          <h5 class="card-title">Grandstream GXP1615</h5>
+                          <p class="card-text"><small class="text-muted">Firmware 1.0.4.55</small></p>
+                        </div>
+                      </div>
+
+                     <div class="card">
+                        <img class="card-img-top w-100 mx-auto" src="img/phones/homologados/GXP2135.jpg" alt="GXP2135" />
+                        <div class="card-body">
+                          <h5 class="card-title">Grandstream GXP2135</h5>
+                          <p class="card-text"><small class="text-muted">Firmware 1.0.11.3</small></p>
+                        </div>
+                      </div>
+
+                     <div class="card">
+                        <img class="card-img-top w-100 mx-auto" src="img/phones/homologados/GXP2170.jpg" alt="GXP2170" />
+                        <div class="card-body">
+                          <h5 class="card-title">Grandstream GXP2170</h5>
+                          <p class="card-text"><small class="text-muted">Firmware 1.0.11.3</small></p>
+                        </div>
+                      </div>
+
+                     <div class="card">
+                        <img class="card-img-top w-100 mx-auto" src="img/phones/homologados/GXV3275.jpeg" alt="GXV3275" />
+                        <div class="card-body">
+                          <h5 class="card-title">Grandstream GXV3275</h5>
+                          <p class="card-text"><small class="text-muted">Firmware 1.0.3.186</small></p>
+                        </div>
+                      </div>
+
+                      <div class="card">
+                        <img class="card-img-top w-100 mx-auto" src="img/phones/homologados/CP960.jpg" alt="CP960" />
+                        <div class="card-body">
+                          <h5 class="card-title">Yealink CP960</h5>
+                          <p class="card-text"><small class="text-muted">Firmware 73.80.0.50</small></p>
+                        </div>
+                      </div>
+
+                      <div class="card">
+                        <img class="card-img-top w-100 mx-auto" src="img/phones/homologados/GAC2500.jpg" alt="GAC2500" />
+                        <div class="card-body">
+                          <h5 class="card-title">Grandstream GAC2500</h5>
+                          <p class="card-text"><small class="text-muted">Firmware 1.0.3.5</small></p>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">@Maxcom Telecomunicaciones</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="static/aviso_privacidad.pdf">Aviso de privacidad</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.maxcom.com.mx">Página principal</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+
+
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>
